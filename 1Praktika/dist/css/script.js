@@ -110,14 +110,15 @@ if (p1>p2 && p1>p3) {
 }
 
 // Desimta
+// negerai su 9 ir 11 men
 let day= 30;
 let day2= 31;
 let day3= 28;
-let men=3;
+let men=8;
 
 if (men == 2){
     console.log(day3);
-} else if (men % 2 == 0) {
+} else if (men % 2 == 0 && men!=(8 || 10 || 12)) {
     console.log (day);
 } else {
     console.log (day2);
