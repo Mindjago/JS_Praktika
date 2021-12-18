@@ -81,4 +81,58 @@ function task5() {
 const children = ["Jonas","Petras","Antanas","Maryte","Onute"];
 const adult = ["Kazys","Jonas","Maryte","Juozas"];
 
-const sameNames = []
+const sameNames = [];
+
+for (let i=0; i<children.length; i++){
+    for (let j=0; j<adult.length; j++){
+        if (children[i]===adult[j]){
+            sameNames.push(children[i]);
+        }
+    }
+}
+console.log(sameNames);
+
+// Task6 Reikia rasti dazniausiai pasitaikanti elementa masyve
+
+const array1 = [3, "a","a","a",3,2,5,"b","b",];
+
+function mostFreq(array){
+    let frequency = 1;
+    let m = 0;
+    let item;
+    
+    for(let i=0; i<array.length; i++){
+        for (let j=i; j<array.length; j++){
+            if (array[i]===array[j]){
+                m++
+            }
+            if (frequency<m){
+                frequency=m;
+                item=array[i];
+            }
+        }
+        m=0;
+    }
+    console.log(item+" ("+frequency+") kartai");
+}
+
+// task6 mini forma suvesti masyvo elementus ir atspausdinti masyva
+
+let x = 0;
+const list = [];
+
+function addToArray(){
+    list[x] = document.getElementById("text1").value;
+    alert("Element: "+list[x]+" Added to array");
+    x++;
+    document.getElementById("text1").value = "";
+}
+
+function showArray(){
+    let ul = "<ul>"
+    for (let i=0; i<list.length; i++){
+        ul+= "<li>"+list[i]+"</li>";
+    }
+    ul += "</ul>";
+    document.getElementById("result").innerHTML = ul;
+}
